@@ -42,6 +42,29 @@ describe("sanity check", () => {
       .format(1000, { currency: "USD" })
       .should.equal("$1,000.00");
   });
+  it("should work", () => {
+    const usdEnt = "$";
+    const jpyEnt = "¥";
+    const krwEnt = "₩";
+    const kronerEnt = "kr";
+    currencyFormatter
+      .format(1000, { currency: "JPY", locale: "en_US" })
+      .should.equal("¥1,000");
+
+    currencyFormatter
+      .format(1000, { currency: "JPY", locale: "ja" })
+      .should.equal(`${jpyEnt}1,000`);
+
+    currencyFormatter
+      .format(1000, { currency: "USD" })
+      .should.equal(`${usdEnt}1,000.00`);
+    currencyFormatter
+      .format(1000, { currency: "USD", locale: "en_US" })
+      .should.equal(`${usdEnt}1,000.00`);
+    currencyFormatter
+      .format(1000, { currency: "USD", locale: "ja" })
+      .should.equal(`${usdEnt}1,000.00`);
+  });
 });
 
 // ignored CVE because its decimal status is confusing (https://en.wikipedia.org/wiki/Cape_Verdean_escudo) ,

@@ -1,5 +1,5 @@
 {
-  "name": "currencyformatter.js",
+  "name": "@elastic-internal/currencyformatter.js",
   "version": "2.2.0",
   "description": "A super simple currency formatting library by OSREC Technologies https://osrec.co.uk",
   "main": "dist/currencyFormatter.js",
